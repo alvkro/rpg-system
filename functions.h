@@ -14,7 +14,7 @@ void showInimigo(const Inimigo& enemy) {
     printf("Vida: %iHP", enemy.Vida);
 }
 
-void CreateItem(Item& item) {
+void CreateItem(Item& item) { // Tem que achar uma maneira de salvar esses items
     while (true) {
         printf("Digite o nome do seu item: ");
         cin >> item.Nome;
@@ -26,4 +26,21 @@ void CreateItem(Item& item) {
             break;
         }
     }
+}
+
+Item SelectItem(const Jogador& jogador) {
+    if (jogador.Inventario.empty()) {
+        cout << "Inventário vazio!\n";
+        return {"", 0}; // Item sentinela!
+    }
+
+    int Escolha;
+    for (int i = 0; i < jogador.Inventario.size(); i++) {
+        cout << i + 1 << ". " << jogador.Inventario[i + 1].Nome << " (Poder: " << jogador.Inventario[i].Poder << ")\n";
+    }
+    printf("Selecione um item do seu inventário: \n");
+    // Escolha = 
+    /*if (Escolha < jogador.Inventario.size()) {
+        return 
+    }*/
 }
