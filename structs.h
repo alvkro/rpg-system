@@ -12,9 +12,19 @@ struct Jogador {
 struct Item {
     string Nome;
     int Poder;
+    TipoDeItem tipo;
 };
 
 struct Inimigo {
     string Nome;
     int Vida;
+    int Ataque;
+};
+
+enum class TipoDeItem {
+    Espada,
+    Escudo,
+    Pocao,
+    Debuff,
+    Buff,
 };
