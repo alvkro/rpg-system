@@ -6,16 +6,6 @@ using namespace std;
 
 // Colocar uma biblioteca para randomizar os ataques (seria uma adição legal...)
 
-void showJogador(const Jogador& player) {
-    printf("Nome: %s", player.Nome.c_str());
-    printf("Vida: %iHP", player.Vida);
-}
-
-void showInimigo(const Inimigo& enemy) {
-    printf("Inimigo: %s", enemy.Nome.c_str());
-    printf("Vida: %iHP", enemy.Vida);
-}
-
 void CreateItem(Item& item) { // Tem que achar uma maneira de salvar esses items
     while (true) {
         printf("Digite o nome do seu item: ");

@@ -26,5 +26,5 @@ enum class TipoDeItem {
     Escudo,
     Pocao,
     Debuff,
-    Buff,
+    Buff
 };
