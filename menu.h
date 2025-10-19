@@ -2,7 +2,9 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include "structs.h"
+#include "classes/jogador.h"
+#include "classes/inimigo.h"
+#include "classes/itens.h"
 using namespace std;
 
 int MenuPrincipal(int& escolha) {
@@ -15,8 +17,6 @@ int MenuPrincipal(int& escolha) {
     cin >> Escolha;
     return Escolha;
 }
-
-
 
 void showJogador(const Jogador& player) {
     printf("Nome: %s", player.Nome.c_str());
