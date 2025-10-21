@@ -2,20 +2,16 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
-#include "classes/jogador.h"
-#include "classes/inimigo.h"
-#include "classes/itens.h"
+#include "jogador.h"
+#include "inimigo.h"
+#include "itens.h"
 using namespace std;
 
-int MenuPrincipal(int& escolha) {
-    int Escolha;
+void MenuPrincipal() {
     cout << "RPG EM TURNOS\n";
     cout << "1. Novo Jogo"; // Ainda não sei como fazer
     cout << "2. Carregar jogo"; // Ainda não sei como fazer
     cout << "3. Sair";
-    
-    cin >> Escolha;
-    return Escolha;
 }
 
 void showJogador(const Jogador& player) {
@@ -26,4 +22,10 @@ void showJogador(const Jogador& player) {
 void showInimigo(const Inimigo& enemy) {
     printf("Inimigo: %s", enemy.Nome.c_str());
     printf("Vida: %iHP", enemy.Vida);
+}
+
+void MenuAcao(){
+    cout << "=====================================" << endl;
+    cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =" << endl;
+    cout << "==== 1 ========= 2 =========== 3 ====" << endl;
 }

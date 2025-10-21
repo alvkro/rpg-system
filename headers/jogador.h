@@ -1,17 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "classes/inimigo.h"
-#include "classes/itens.h"
+#include "itens.h"
 using namespace std;
 
-class Jogador {
+class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, paladino...)
     public:
     string Nome;
-    int Vida;
-    int Ataque;
+    int Vida = 100;
+    int Ataque = 10;
 
     // Funções:
+
+    Jogador DataPlayer(Jogador& player) {
+        cout << "Selecione seu nome: ";
+        cin >> player.Nome;
+    }
 
     Item SelectItem() {
     int Escolha;

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "jogador.h"
 #include "itens.h"
 using namespace std;
 
@@ -9,8 +8,8 @@ using namespace std;
 class Inimigo {
     public:
     string Nome;
-    int Vida;
-    int Ataque;
+    int Vida = 200;
+    int Ataque = 10;
 
     // Funções:
 
