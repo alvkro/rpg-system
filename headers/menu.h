@@ -14,18 +14,11 @@ void MenuPrincipal() {
     cout << "3. Sair";
 }
 
-void showJogador(const Jogador& player) {
-    printf("Nome: %s", player.Nome.c_str());
-    printf("Vida: %iHP", player.Vida);
-}
-
-void showInimigo(const Inimigo& enemy) {
-    printf("Inimigo: %s", enemy.Nome.c_str());
-    printf("Vida: %iHP", enemy.Vida);
-}
-
-void MenuAcao(){
-    cout << "=====================================" << endl;
-    cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =" << endl;
-    cout << "==== 1 ========= 2 =========== 3 ====" << endl;
+void MenuAcao(Jogador& player, Inimigo& enemy){
+    cout << "=====================================\n";
+    player.showJogador(player);
+    cout << "=====================================\n";
+    enemy.showInimigo(enemy);
+    cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =\n";
+    cout << "==== 1 ========= 2 =========== 3 ====\n";
 }

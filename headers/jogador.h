@@ -39,11 +39,16 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
         }
     }
     return Inventario[Escolha - 1];
-}
+    }
 
     int AtaqueInimigo(Inimigo& enemy) {
         cout << Nome << " atacou " << enemy.Nome << "!\n";
         return enemy.Vida -= Ataque;
+    }
+
+    void showJogador(const Jogador& player) { 
+        cout << "Nome: " << player.Nome << endl;
+        cout << "Vida: " << player.Vida << "hp\n"; 
     }
 
     private:

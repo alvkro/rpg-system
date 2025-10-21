@@ -17,4 +17,9 @@ class Inimigo {
         cout << Nome << " atacou " << player.Nome << "!\n";
         return player.Vida -= Ataque;
     }
+
+    void showInimigo(const Inimigo& enemy) {
+        cout << "Nome: " << enemy.Nome << endl;
+        cout << "Vida: " << enemy.Vida << "hp\n"; 
+    }
 };

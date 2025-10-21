@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cctype>
 #include "jogador.h"
 #include "inimigo.h"
 #include "mechanics.h"
@@ -12,6 +13,16 @@ int main() {
     Inimigo Enemy;
 
     while (true) {
+        string confirm;
+        Player.DataPlayer(Player);
+        cout << "Seu nome é" << Player.Nome << ". Confirma?"; // toupper() posteriormente
+        cin >> confirm;
+        if (confirm == "SIM") {
+            break;
+        }
+    }
+
+    while (true) {
         int option;
         MenuPrincipal();
         switch (option)
@@ -20,4 +31,5 @@ int main() {
             break;
         }
     }
+    Combate(Player, Enemy);
 }
