@@ -1,3 +1,5 @@
+#ifndef MENU_H
+#define MENU_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -22,3 +24,5 @@ void MenuAcao(Jogador& player, Inimigo& enemy){
     cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =\n";
     cout << "==== 1 ========= 2 =========== 3 ====\n";
 }
+
+#endif

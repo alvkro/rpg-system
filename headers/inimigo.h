@@ -1,7 +1,11 @@
+#ifndef INIMIGO_H
+#define INIMIGO_H
 #include <iostream>
 #include <vector>
 #include <string>
 #include "itens.h"
+
+class Jogador;
 using namespace std;
 
 
@@ -13,13 +17,8 @@ class Inimigo {
 
     // Funções:
 
-    int InimigoAtaque(Jogador& player) {
-        cout << Nome << " atacou " << player.Nome << "!\n";
-        return player.Vida -= Ataque;
-    }
-
-    void showInimigo(const Inimigo& enemy) {
-        cout << "Nome: " << enemy.Nome << endl;
-        cout << "Vida: " << enemy.Vida << "hp\n"; 
-    }
+    void InimigoAtaque(Jogador& player);
+    void showInimigo(const Inimigo& enemy);
 };
+
+#endif

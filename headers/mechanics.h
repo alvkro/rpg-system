@@ -1,3 +1,5 @@
+#ifndef MECHANICS_H
+#define MECHANICS_H
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,7 +12,7 @@ using namespace std;
 // Colocar uma biblioteca para randomizar os ataques que nem no Dota (seria uma adição legal...)
 
 bool Combate(Jogador& player, Inimigo& enemy) {
-    while (player.Vida != 0 || enemy.Vida != 0 ) {
+    while (player.Vida >= 0 && enemy.Vida >= 0 ) {
         int action;
         MenuAcao(player, enemy);
         cin >> action;
@@ -18,20 +20,28 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         {
         case 1:
             player.AtaqueInimigo(enemy);
+            if (enemy.Vida <= 0) {
+                return true;
+            }
             break;
         case 2:
-            player.SelectItem();
+            player.SelectItem(); // ainda preciso trabalhar nos itens
+            break;
         case 3:
             break;
         }
         enemy.InimigoAtaque(player);
+        if (player.Vida <= 0) {
+                return false;
+            }
     }
-    if (player.Vida == 0) {
-        cout << "Você perdeu... :(";
+    if (player.Vida <= 0) {
+        return false;
     }
-    else {
-        cout << "Você ganhou!! :)";
+    else if (enemy.Vida <= 0) {
+        return true;
     }
+    return false;
 }
 
 //void BancoDeItens() {
@@ -48,3 +58,5 @@ bool Combate(Jogador& player, Inimigo& enemy) {
 //    Items.push_back(escudo_madeira);
 //    Items.push_back(adaga_ferro);
 //}
+
+#endif

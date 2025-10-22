@@ -1,7 +1,11 @@
+#ifndef JOGADOR_H
+#define JOGADOR_H
 #include <iostream>
 #include <vector>
 #include <string>
 #include "itens.h"
+
+class Inimigo;
 using namespace std;
 
 class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, paladino...)
@@ -10,47 +14,15 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
     int Vida = 100;
     int Ataque = 10;
 
-    // Funções:
+    // Funções (assinaturas):
 
-    Jogador DataPlayer(Jogador& player) {
-        cout << "Selecione seu nome: ";
-        cin >> player.Nome;
-    }
-
-    Item SelectItem() {
-    int Escolha;
-    if (Inventario.empty()) {
-        cout << "Inventário vazio!\n";
-        return {"", 0}; 
-    }
-    else {
-        for (int i = 0; i < Inventario.size(); i++) {
-            cout << i + 1 << ". " << Inventario[i].Nome << " (Poder: " << Inventario[i].Poder << ")\n";
-        }
-        while(true) {
-            cout << "Escolha um item:";
-            cin >> Escolha;
-            if(Escolha >= 1 && Escolha <= Inventario.size()) {
-                break;
-            }
-            else {
-                cout << "Item Inválido! Tente novamente\n";
-            }
-        }
-    }
-    return Inventario[Escolha - 1];
-    }
-
-    int AtaqueInimigo(Inimigo& enemy) {
-        cout << Nome << " atacou " << enemy.Nome << "!\n";
-        return enemy.Vida -= Ataque;
-    }
-
-    void showJogador(const Jogador& player) { 
-        cout << "Nome: " << player.Nome << endl;
-        cout << "Vida: " << player.Vida << "hp\n"; 
-    }
+    void DataPlayer(Jogador& player);
+    Item SelectItem();
+    void AtaqueInimigo(Inimigo& enemy);
+    void showJogador(const Jogador& player);
 
     private:
     vector <Item> Inventario;
 };
+
+#endif
