@@ -1,5 +1,4 @@
-#ifndef INIMIGO_H
-#define INIMIGO_H
+#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -17,8 +16,7 @@ class Inimigo {
 
     // Funções:
 
-    void InimigoAtaque(Jogador& player);
+    void InimigoAtaque(Jogador& player, Inimigo& enemy);
     void showInimigo(const Inimigo& enemy);
 };
 
-#endif

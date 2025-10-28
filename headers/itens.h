@@ -1,5 +1,4 @@
-#ifndef ITENS_H
-#define ITENS_H
+#pragma once
 #include <string>
 #include <vector>
 using namespace std;
@@ -16,5 +15,3 @@ class Item {
     int Poder;
     TipoDeItem tipo;
 };
-
-#endif

@@ -14,7 +14,7 @@ int main() {
 
     while (true) {
         int option;
-        MenuPrincipal();
+        void MenuPrincipal();
         switch (option)
         {
         case 1:
@@ -33,5 +33,5 @@ int main() {
         }
     }
 
-    // Combate(Player, Enemy);
+    Combate(Player, Enemy);
 }
