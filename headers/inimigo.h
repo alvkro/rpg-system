@@ -10,7 +10,7 @@ using namespace std;
 
 class Inimigo {
     public:
-    string Nome;
+    string Nome = "Thanos";
     int Vida = 200;
     int Ataque = 10;
 

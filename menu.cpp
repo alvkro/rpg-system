@@ -17,9 +17,9 @@ void MenuPrincipal() {
 
 void MenuAcao(Jogador& player, Inimigo& enemy){
     cout << "=====================================\n";
-    player.showJogador(player);
+    player.GetJogadorInfo(player);
     cout << "=====================================\n";
-    enemy.showInimigo(enemy);
+    enemy.GetInimigoInfo(enemy);
     cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =\n";
     cout << "==== 1 ========= 2 =========== 3 ====\n";
 }

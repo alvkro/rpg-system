@@ -12,12 +12,12 @@ using namespace std;
 bool Combate(Jogador& player, Inimigo& enemy) {
     while (player.Vida >= 0 && enemy.Vida >= 0 ) {
         int action;
-        Jogador MenuAcao;
+        MenuAcao(player, enemy);
         cin >> action;
         switch (action)
         {
         case 1:
-            player.AtaqueInimigo(player, enemy);
+            player.GetAtaqueInimigo(player, enemy);
             if (enemy.Vida <= 0) {
                 return true;
             }
@@ -28,7 +28,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         case 3:
             break;
         }
-        enemy.InimigoAtaque(player, enemy);
+        enemy.GetInimigoAtaque(player, enemy);
         if (player.Vida <= 0) {
                 return false;
             }
