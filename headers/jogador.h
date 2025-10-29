@@ -17,10 +17,10 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
 
     // Funções (assinaturas):
 
-    void DataPlayer(Jogador& player);
+    void GetNomeJogador(Jogador& player);
     // Item SelectItem();
-    void AtaqueInimigo(Jogador& player, Inimigo& enemy);
-    void showJogador(const Jogador& player);
+    void GetAtaqueInimigo(Jogador& player, Inimigo& enemy);
+    void GetJogadorInfo(const Jogador& player);
     // const vector<Item>& getInventario() const;
 
     private:

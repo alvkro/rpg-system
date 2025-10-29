@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <vector>
 #include <string>
@@ -10,12 +9,12 @@ using namespace std;
 
     // Funções:
 
-    void Inimigo::InimigoAtaque(Jogador& player, Inimigo& enemy) {
+    void Inimigo::GetInimigoAtaque(Jogador& player, Inimigo& enemy) {
         cout << enemy.Nome << " atacou " << player.Nome << "!\n";
         player.Vida -= enemy.Ataque;
     }
 
-    void Inimigo::showInimigo(const Inimigo& enemy) {
+    void Inimigo::GetInimigoInfo(const Inimigo& enemy) {
         cout << "Nome: " << enemy.Nome << endl;
         cout << "Vida: " << enemy.Vida << "hp\n"; 
     }

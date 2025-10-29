@@ -9,7 +9,7 @@ using namespace std;
 
     // Funções:
 
-    void Jogador::DataPlayer(Jogador& player) {
+    void Jogador::GetNomeJogador(Jogador& player) {
         cout << "Selecione seu nome: ";
         cin >> player.Nome;
     }
@@ -38,12 +38,12 @@ using namespace std;
    // return player.Inventario[Escolha - 1];
    // }
 
-    void Jogador::AtaqueInimigo(Jogador& player, Inimigo& enemy) {
+    void Jogador::GetAtaqueInimigo(Jogador& player, Inimigo& enemy) {
         cout << player.Nome << " atacou " << enemy.Nome << "!\n";
         enemy.Vida -= player.Ataque;
     }
 
-    void Jogador::showJogador(const Jogador& player) { 
+    void Jogador::GetJogadorInfo(const Jogador& player) { 
         cout << "Nome: " << player.Nome << endl;
         cout << "Vida: " << player.Vida << "hp\n"; 
     }

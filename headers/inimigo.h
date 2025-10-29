@@ -16,7 +16,7 @@ class Inimigo {
 
     // Funções:
 
-    void InimigoAtaque(Jogador& player, Inimigo& enemy);
-    void showInimigo(const Inimigo& enemy);
+    void GetInimigoAtaque(Jogador& player, Inimigo& enemy);
+    void GetInimigoInfo(const Inimigo& enemy);
 };
 

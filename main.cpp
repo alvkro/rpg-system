@@ -12,9 +12,9 @@ int main() {
     Jogador Player;
     Inimigo Enemy;
 
+    MenuPrincipal();
     while (true) {
         int option;
-        void MenuPrincipal();
         switch (option)
         {
         case 1:
@@ -24,7 +24,7 @@ int main() {
 
     while (true) {
         string confirm;
-        Player.DataPlayer(Player);
+        Player.GetNome(Player);
         cout << "Seu nome é" << Player.Nome << ". Confirma?\n"; // toupper() posteriormente
         cout << "Digite SIM ou NÃO: "; 
         cin >> confirm;
