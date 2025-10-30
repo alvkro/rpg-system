@@ -22,16 +22,8 @@ int main() {
             break;
         }
 
-        while (true) {
-            string confirm;
-            Player.GetNomeJogador(Player);
-            cout << "Seu nome é: " << Player.Nome << ". Confirma?\n"; // toupper() posteriormente
-            cout << "Digite SIM ou NÃO: "; 
-            cin >> confirm;
-            if (confirm == "SIM") {
-                break;
-            }
-        }
+        Player.GetNomeJogador(Player);
+        
         Combate(Player, Enemy);
         if(Combate(Player, Enemy) == true) {
             cout << Player.Nome << " GANHOU!\n";

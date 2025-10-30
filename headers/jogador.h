@@ -17,7 +17,7 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
 
     // Funções (assinaturas):
 
-    void GetNomeJogador(Jogador& player);
+    bool GetNomeJogador(Jogador& player);
     // Item SelectItem();
     void GetAtaqueInimigo(Jogador& player, Inimigo& enemy);
     void GetJogadorInfo(const Jogador& player);

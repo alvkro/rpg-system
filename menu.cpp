@@ -2,24 +2,34 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <chrono>
+#include <thread>
 #include "headers/jogador.h"
 #include "headers/inimigo.h"
 #include "headers/itens.h"
 using namespace std;
 
+void print(const string& texto) {
+    for (size_t i = 0; i < texto.size(); i++) {
+        cout << texto[i] << flush;
+        this_thread::sleep_for(chrono::milliseconds(50));
+    }
+}
+
 void MenuPrincipal() {
-    cout << "RPG EM TURNOS\n";
-    cout << "1. Novo Jogo\n"; // Ainda não sei como fazer
-    cout << "2. Carregar jogo\n"; // Ainda não sei como fazer
-    cout << "3. Sair\n";
-    cout << "Opção: ";
+    print("RPG EM TURNOS\n");
+    print("1. Novo Jogo\n"); // Ainda não sei como fazer
+    print("2. Carregar jogo\n"); // Ainda não sei como fazer
+    print("3. Sair\n");
+    print("Opção: ");
 }
 
 void MenuAcao(Jogador& player, Inimigo& enemy){
-    cout << "=====================================\n";
+    print("=====================================\n");
     player.GetJogadorInfo(player);
-    cout << "=====================================\n";
+    print("=====================================\n");
     enemy.GetInimigoInfo(enemy);
-    cout << "= ATAQUE = SELECIONAR ITEM = PASSAR =\n";
-    cout << "==== 1 ========= 2 =========== 3 ====\n";
+    print("=====================================\n");
+    print("= ATAQUE = SELECIONAR ITEM = PASSAR =\n");
+    print("==== 1 ========= 2 =========== 3 ====\n");
 }

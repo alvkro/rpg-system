@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "headers/menu.h"
 #include "headers/jogador.h"
 #include "headers/itens.h"
 #include "headers/inimigo.h"
@@ -9,9 +10,22 @@ using namespace std;
 
     // Funções:
 
-    void Jogador::GetNomeJogador(Jogador& player) {
-        cout << "Selecione seu nome: ";
+    bool Jogador::GetNomeJogador(Jogador& player) {
+        char confirm;
+        print("Selecione seu nome: ");
         cin >> player.Nome;
+        cout << "Seu nome é: " << player.Nome << ". Confirma?\n"; 
+        print("Digite S/N: "); 
+        cin >> confirm;
+        toupper(confirm);
+        while (true) {
+            if (confirm == 'S') {
+                return false;
+            }
+            else if (confirm == 'N') {
+                return true;
+            }
+        }
     }
 
    //Item SelectItem() {

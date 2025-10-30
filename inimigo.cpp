@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "headers/menu.h"
 #include "headers/itens.h"
 #include "headers/inimigo.h"
 #include "headers/jogador.h"

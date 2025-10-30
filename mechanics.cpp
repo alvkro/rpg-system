@@ -32,14 +32,14 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         if (player.Vida <= 0) {
                 return false;
             }
-    }
-    if (player.Vida <= 0) {
+        }
+        if (player.Vida <= 0) {
+            return false;
+        }
+        else if (enemy.Vida <= 0) {
+            return true;
+        }
         return false;
-    }
-    else if (enemy.Vida <= 0) {
-        return true;
-    }
-    return false;
 }
 
 //void BancoDeItens() {
