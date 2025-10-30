@@ -11,19 +11,23 @@ using namespace std;
     // Funções:
 
     bool Jogador::GetNomeJogador(Jogador& player) {
-        char confirm;
-        print("Selecione seu nome: ");
-        cin >> player.Nome;
-        cout << "Seu nome é: " << player.Nome << ". Confirma?\n"; 
-        print("Digite S/N: "); 
-        cin >> confirm;
-        toupper(confirm);
         while (true) {
-            if (confirm == 'S') {
-                return false;
-            }
-            else if (confirm == 'N') {
-                return true;
+            char confirm;
+            print("Selecione seu nome: ");
+            cin >> player.Nome;
+            cin.get();
+            cout << "Seu nome é: " << player.Nome << ". Confirma?\n"; 
+            print("Digite S/N: "); 
+            cin >> confirm;
+            cin.get();
+            toupper(confirm);
+            while (true) {
+                if (confirm == 'S') {
+                    return false;
+                }
+                else if (confirm == 'N') {
+                    return true;
+                }
             }
         }
     }

@@ -9,10 +9,14 @@
 #include "headers/itens.h"
 using namespace std;
 
+void cleanConsole() {
+    system("clear");
+}
+
 void print(const string& texto) {
     for (size_t i = 0; i < texto.size(); i++) {
         cout << texto[i] << flush;
-        this_thread::sleep_for(chrono::milliseconds(50));
+        this_thread::sleep_for(chrono::milliseconds(40));
     }
 }
 

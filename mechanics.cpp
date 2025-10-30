@@ -18,6 +18,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         {
         case 1:
             player.GetAtaqueInimigo(player, enemy);
+            cin.get();
             if (enemy.Vida <= 0) {
                 return true;
             }
@@ -28,6 +29,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         case 3:
             break;
         }
+        cin.get();
         enemy.GetInimigoAtaque(player, enemy);
         if (player.Vida <= 0) {
                 return false;

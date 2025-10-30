@@ -10,6 +10,7 @@ using namespace std;
 
 int main() {
     Jogador Player;
+    vector <Jogador> Inventario;
     Inimigo Enemy;
 
     MenuPrincipal();

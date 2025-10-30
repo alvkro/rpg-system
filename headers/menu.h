@@ -13,3 +13,4 @@ using namespace std;
 void MenuPrincipal();
 void MenuAcao(Jogador& player, Inimigo& enemy);
 void print(const string& texto);
+void cleanConsole();
