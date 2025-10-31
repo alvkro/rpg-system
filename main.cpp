@@ -22,17 +22,24 @@ int main() {
         case 1:
             break;
         }
+        break;
+    }
 
-        Player.GetNomeJogador(Player);
+    while(true){
+        if ((Player.GetNomeJogador(Player)) == 'S') {
+            break;
+        }
+        else if (Player.GetNomeJogador(Player) == 'N') {
+            Player.GetNomeJogador(Player);
+        }
+    }
         
         Combate(Player, Enemy);
         if(Combate(Player, Enemy) == true) {
+            cout << "oioi";
             cout << Player.Nome << " GANHOU!\n";
-            break;
         }
         else {
             cout << Enemy.Nome << " GANHOU!\n";
-            break;
         }
-    }   
-}
+}   

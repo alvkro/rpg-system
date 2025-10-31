@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cctype>
 #include "headers/menu.h"
 #include "headers/jogador.h"
 #include "headers/itens.h"
@@ -10,26 +11,16 @@ using namespace std;
 
     // Funções:
 
-    bool Jogador::GetNomeJogador(Jogador& player) {
-        while (true) {
-            char confirm;
-            print("Selecione seu nome: ");
-            cin >> player.Nome;
-            cin.get();
-            cout << "Seu nome é: " << player.Nome << ". Confirma?\n"; 
-            print("Digite S/N: "); 
-            cin >> confirm;
-            cin.get();
-            toupper(confirm);
-            while (true) {
-                if (confirm == 'S') {
-                    return false;
-                }
-                else if (confirm == 'N') {
-                    return true;
-                }
-            }
-        }
+    char Jogador::GetNomeJogador(Jogador& player) {
+        char confirm;
+        print("Selecione seu nome: ");
+        cin >> player.Nome;
+        cout << "Seu nome é: " << player.Nome << ". Confirma?\n"; 
+        print("Digite S/N: "); 
+        cin >> confirm;
+        confirm = toupper(confirm);
+        cout << confirm << endl;
+        return confirm;
     }
 
    //Item SelectItem() {
