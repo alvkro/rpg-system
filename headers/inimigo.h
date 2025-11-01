@@ -2,11 +2,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <random>
+#include "mechanics.h"
 #include "itens.h"
 
 class Jogador;
 using namespace std;
-
 
 class Inimigo {
     public:

@@ -11,8 +11,14 @@ using namespace std;
     // Funções:
 
     void Inimigo::GetInimigoAtaque(Jogador& player, Inimigo& enemy) {
+        isMissed();
+        if (isMissed() == true) {
+            print("Errou o golpe!\n");
+        }
+        else {
         cout << enemy.Nome << " atacou " << player.Nome << "!\n";
-        player.Vida -= enemy.Ataque;
+        player.Vida -= randomAttack_E(enemy);
+        }
     }
 
     void Inimigo::GetInimigoInfo(const Inimigo& enemy) {

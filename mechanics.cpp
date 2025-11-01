@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <random>
 #include "headers/menu.h"
 #include "headers/inimigo.h"
 #include "headers/jogador.h"
@@ -8,6 +9,33 @@
 using namespace std;
 
 // Colocar uma biblioteca para randomizar os ataques que nem no Dota (seria uma adição legal...)
+
+int randomAttack_J(Jogador& player) {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(1, player.Ataque);
+    return dist(gen);
+}
+
+int randomAttack_E(Inimigo& enemy) {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(1, enemy.Ataque);
+    return dist(gen);
+}
+
+bool isMissed() {
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dist(0, 1);
+    if (dist(gen) == 0) {
+        return false;
+    }
+    else if (dist(gen) == 1) {
+        return true;
+    }
+    return false;
+}
 
 bool Combate(Jogador& player, Inimigo& enemy) {
     while (player.Vida >= 0 && enemy.Vida >= 0 ) {
@@ -45,18 +73,3 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         }
         return true;
 }
-
-//void BancoDeItens() {
-//    vector <Item> Items;
-//
-//    Item espada_curta = {"Espada Curta", 10, TipoDeItem::Espada};
-//    Item pocao_pequena = {"Pocao Pequena", 20, TipoDeItem::Pocao};
-//    Item escudo_madeira = {"Escudo de Madeira", 5, TipoDeItem::Escudo};
-//    Item adaga_ferro = {"Adaga de Ferro", 8, TipoDeItem::Espada};
-//    // Adicionar mais items?
-//
-//    Items.push_back(espada_curta);
-//    Items.push_back(pocao_pequena);
-//    Items.push_back(escudo_madeira);
-//    Items.push_back(adaga_ferro);
-//}

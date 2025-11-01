@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <random>
 #include <chrono>
 #include <thread>
 #include "headers/jogador.h"

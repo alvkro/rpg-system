@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include "itens.h"
-
+#include "mechanics.h"
 
 class Inimigo;
 using namespace std;
@@ -12,8 +12,7 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
     public:
     string Nome;
     int Vida = 100;
-    int Ataque = 10;
-
+    int Ataque = 10; // O ataque pode ir de acordo com nivel de ataque do inimigo
 
     // Funções (assinaturas):
 

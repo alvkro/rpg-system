@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <cctype>
+#include <random>
+#include "headers/mechanics.h"
 #include "headers/menu.h"
 #include "headers/jogador.h"
 #include "headers/itens.h"
@@ -23,33 +25,15 @@ using namespace std;
         return confirm;
     }
 
-   //Item SelectItem() {
-   // int Escolha;
-   // if (Inventario.empty()) {
-   //     cout << "Inventário vazio!\n";
-   //     return {"", 0}; 
-   // }
-   // else {
-   //     for (int i = 0; i < player.Inventario.size(); i++) {
-   //         cout << i + 1 << ". " << player.Inventario[i].Nome << " (Poder: " << Inventario[i].Poder << ")\n";
-   //     }
-   //     while(true) {
-   //         cout << "Escolha um item:";
-   //         cin >> Escolha;
-   //         if(Escolha >= 1 && Escolha <= player.Inventario.size()) {
-   //             break;
-   //         }
-   //         else {
-   //             cout << "Item Inválido! Tente novamente\n";
-   //         }
-   //     }
-   // }
-   // return player.Inventario[Escolha - 1];
-   // }
-
     void Jogador::GetAtaqueInimigo(Jogador& player, Inimigo& enemy) {
-        cout << player.Nome << " atacou " << enemy.Nome << "!\n";
-        enemy.Vida -= player.Ataque;
+        isMissed();
+        if (isMissed() == true) {
+            print("Errou o golpe!\n");
+        }
+        else {
+           cout << player.Nome << " atacou " << enemy.Nome << "!\n";
+           enemy.Vida -= randomAttack_J(player);
+        }
     }
 
     void Jogador::GetJogadorInfo(const Jogador& player) { 
