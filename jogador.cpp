@@ -19,7 +19,7 @@ using namespace std;
         print("Digite S/N: "); 
         cin >> confirm;
         confirm = toupper(confirm);
-        cout << confirm << endl;
+        cleanConsole();
         return confirm;
     }
 

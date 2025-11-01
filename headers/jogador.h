@@ -18,10 +18,8 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
     // Funções (assinaturas):
 
     char GetNomeJogador(Jogador& player);
-    // Item SelectItem();
     void GetAtaqueInimigo(Jogador& player, Inimigo& enemy);
     void GetJogadorInfo(const Jogador& player);
-    // const vector<Item>& getInventario() const;
 
     private:
     vector <Item> Inventario;

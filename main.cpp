@@ -13,10 +13,13 @@ int main() {
     vector <Jogador> Inventario;
     Inimigo Enemy;
 
+    // MENU PRINCIPAL
+
     MenuPrincipal();
     while (true) {
         int option;
         cin >> option;
+        cleanConsole();
         switch (option)
         {
         case 1:
@@ -25,21 +28,28 @@ int main() {
         break;
     }
 
+    // PERSONALIZAÇÃO DO JOGADOR
+
     while(true){
         if ((Player.GetNomeJogador(Player)) == 'S') {
+            cleanConsole();
             break;
         }
         else if (Player.GetNomeJogador(Player) == 'N') {
+            cleanConsole();
             Player.GetNomeJogador(Player);
         }
     }
+
+    // COMBATE
         
-        Combate(Player, Enemy);
-        if(Combate(Player, Enemy) == true) {
-            cout << "oioi";
-            cout << Player.Nome << " GANHOU!\n";
-        }
-        else {
-            cout << Enemy.Nome << " GANHOU!\n";
-        }
+    Combate(Player, Enemy);
+    if(Combate(Player, Enemy) == true) {
+        cleanConsole();
+        cout << Player.Nome << " GANHOU!\n";
+    }
+    else {
+        cleanConsole();
+        cout << Enemy.Nome << " GANHOU!\n";
+    }
 }   

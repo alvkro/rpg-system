@@ -14,6 +14,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         int action;
         MenuAcao(player, enemy);
         cin >> action;
+        cleanConsole();
         switch (action)
         {
         case 1:
@@ -29,8 +30,9 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         case 3:
             break;
         }
-        cin.get();
         enemy.GetInimigoAtaque(player, enemy);
+        cin.get();
+        cleanConsole();
         if (player.Vida <= 0) {
                 return false;
             }
