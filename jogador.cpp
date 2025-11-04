@@ -36,6 +36,32 @@ using namespace std;
         }
     }
 
+    char Jogador::SetItens() {
+        int Escolha;
+        print("Escolha seus Items: (MÁXIMO DE 2)\n");
+        for (int i = 1; i <= 2; i++) {
+            for (int i = 0; i < BancoDeItems.size(); i++) {
+                cout << i << ". " << BancoDeItems[i].Nome;
+            }
+            Inventario.push_back(BancoDeItems[Escolha]);
+        }
+        print("Este é o seu inventário: ");
+        for (int i = 0; i < Inventario.size(); i++) {
+            cout << Inventario[i].Nome << endl;
+        }
+        char confirma;
+        print("Este é o seu inventário: ");
+        for (int i = 0; i < Inventario.size(); i++) {
+            cout << Inventario[i].Nome << ", ";
+        }
+        
+        print("Confirma? S/N: ");
+        cin >> confirma;
+        toupper(confirma);
+
+        return confirma;
+    }
+
     void Jogador::GetJogadorInfo(const Jogador& player) { 
         cout << "Nome: " << player.Nome << endl;
         cout << "Vida: " << player.Vida << "hp\n"; 

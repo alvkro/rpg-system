@@ -19,6 +19,7 @@ class Jogador { // Futuramente, fazer um sistema de classes (mago, guerreiro, pa
     char GetNomeJogador(Jogador& player);
     void GetAtaqueInimigo(Jogador& player, Inimigo& enemy);
     void GetJogadorInfo(const Jogador& player);
+    char SetItens(); // Membro privado!
 
     private:
     vector <Item> Inventario;

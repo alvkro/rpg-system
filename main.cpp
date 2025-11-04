@@ -40,6 +40,15 @@ int main() {
             cleanConsole();
             Player.GetNomeJogador(Player);
         }
+
+        if ((Player.SetItens()) == 'S') {
+            cleanConsole();
+            break;
+        }
+        else if (Player.SetItens() == 'N') {
+            cleanConsole();
+            Player.SetItens();
+        }
     }
 
     // COMBATE

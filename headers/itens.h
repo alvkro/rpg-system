@@ -13,8 +13,6 @@ struct Item {
     string Nome;
     int pontos_de_acao;
     TipoDeItem tipo;
-
-    vector <Item> SetItens(vector <Item>& Inventario);
 };
 
 const vector <Item> BancoDeItems {
