@@ -11,7 +11,7 @@ using namespace std;
 
 class Inimigo {
     public:
-    string Nome = "Thanos";
+    string Nome = "Goblin";
     int Vida = 200;
     int Ataque = 10;
 
