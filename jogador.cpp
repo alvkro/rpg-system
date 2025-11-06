@@ -73,7 +73,7 @@ using namespace std;
                 cout << i + 1 << ". " << Inventario[i].Nome << " (Poder: " << Inventario[i].pontos_de_acao << ")\n";
             }
             while(true) {
-                cout << "Escolha um item:";
+                cout << "Escolha um item: ";
                 cin >> Escolha;
                 AtualItem.push_back(Inventario[Escolha - 1]);
                 if(Escolha >= 1 && Escolha <= Inventario.size()) {
@@ -83,6 +83,47 @@ using namespace std;
                 else {
                     cout << "Item Inválido! Tente novamente\n";
                 }
+            }
+        }
+    }
+
+    void Jogador::UseItem(Jogador& player) { // Ninguém merece 400 if's, depois arranje um jeito de reduzir isso
+        for (int i = 0; i < AtualItem.size(); i++) {
+            if (AtualItem[i].tipo == Espada) {
+                player.Ataque += AtualItem[i].pontos_de_acao; 
+                for (int i = 0; i < Inventario.size(); i++) {
+                    for (int j = i + 1; j < Inventario.size(); j++) {
+                        if (AtualItem[i].Nome == Inventario[j].Nome) {
+                            Inventario.erase(Inventario.begin() + i);
+                        }
+                    }
+                }  
+                AtualItem.erase(AtualItem.begin() + i); 
+                break;
+            }
+            if (AtualItem[i].tipo == Escudo) { // Fazer uma função 50/50 pra nao ser muito OP
+                player.Vida += AtualItem[i].pontos_de_acao;
+                for (int i = 0; i < Inventario.size(); i++) {
+                    for (int j = i + 1; j < Inventario.size(); j++) {
+                        if (AtualItem[i].Nome == Inventario[j].Nome) {
+                            Inventario.erase(Inventario.begin() + i);
+                        }
+                    }
+                }  
+                AtualItem.erase(AtualItem.begin() + i); 
+                break;
+            }
+            if (AtualItem[i].tipo == Pocao) { // Futuramente, fazer tipos diferentes de poção, aí vai ter que alterar kkkkkk
+                player.Vida += AtualItem[i].pontos_de_acao;
+                for (int i = 0; i < Inventario.size(); i++) {
+                    for (int j = i + 1; j < Inventario.size(); j++) {
+                        if (AtualItem[i].Nome == Inventario[j].Nome) {
+                            Inventario.erase(Inventario.begin() + i);
+                        }
+                    }
+                }  
+                AtualItem.erase(AtualItem.begin() + i); 
+                break;
             }
         }
     }

@@ -55,6 +55,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
             break;
         case 2:
             player.SelectItem();
+            player.UseItem(player);
             break;
         case 3:
             break;

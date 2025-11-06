@@ -31,7 +31,7 @@ int main() {
 
     // PERSONALIZAÇÃO DO JOGADOR
 
-    while(true) {
+    while (true) {
         if ((Player.GetNomeJogador(Player)) == 'S') {
             cleanConsole();
             break;
