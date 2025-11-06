@@ -39,13 +39,21 @@ using namespace std;
     char Jogador::SetItens() {
         int Escolha;
         char confirma;
+        vector <Item> ListaItems;
+        for (int i = 0; i < BancoDeItems.size(); i++) {
+            ListaItems.push_back(BancoDeItems[i]);
+        }
         print("Escolha seus Items: (MÁXIMO DE 2)\n");
         for (int i = 1; i <= 2; i++) {
-            for (int i = 0; i < BancoDeItems.size(); i++) {
-                cout << i + 1 << ". " << BancoDeItems[i].Nome << endl;
+            for (int i = 0; i < ListaItems.size(); i++) {
+                cout << i + 1 << ". " << ListaItems[i].Nome << endl;
             }
             cin >> Escolha;
-            Inventario.push_back(BancoDeItems[Escolha - 1]);
+            Inventario.push_back(ListaItems[Escolha - 1]);
+            print("Item selecionado.");
+            ListaItems.erase(ListaItems.begin() + Escolha - 1);
+            cin.get();
+            cleanConsole();
         }
         print("Este é o seu inventário: ");
         for (int i = 0; i < Inventario.size(); i++) {
@@ -67,6 +75,7 @@ using namespace std;
         int Escolha;
         if (Inventario.empty()) {
             cout << "Inventário vazio!\n";
+            cin.get();
         }
         else {
             for (int i = 0; i < Inventario.size(); i++) {
@@ -75,9 +84,11 @@ using namespace std;
             while(true) {
                 cout << "Escolha um item: ";
                 cin >> Escolha;
-                AtualItem.push_back(Inventario[Escolha - 1]);
+                AtualItem.push_back(Inventario[Escolha - 1]); // LIFO
                 if(Escolha >= 1 && Escolha <= Inventario.size()) {
-                    print("Item selecionado!");
+                    print("Item selecionado!\n ");
+                    Inventario.erase(Inventario.begin() +  Escolha - 1);
+                    cin.get();
                     break;
                 }
                 else {
@@ -90,38 +101,16 @@ using namespace std;
     void Jogador::UseItem(Jogador& player) { // Ninguém merece 400 if's, depois arranje um jeito de reduzir isso
         for (int i = 0; i < AtualItem.size(); i++) {
             if (AtualItem[i].tipo == Espada) {
-                player.Ataque += AtualItem[i].pontos_de_acao; 
-                for (int i = 0; i < Inventario.size(); i++) {
-                    for (int j = i + 1; j < Inventario.size(); j++) {
-                        if (AtualItem[i].Nome == Inventario[j].Nome) {
-                            Inventario.erase(Inventario.begin() + i);
-                        }
-                    }
-                }  
-                AtualItem.erase(AtualItem.begin() + i); 
+                player.Ataque += AtualItem[i].pontos_de_acao;   
+                // AtualItem.erase(AtualItem.begin() + i); e essa espada é de papelão é
                 break;
             }
             if (AtualItem[i].tipo == Escudo) { // Fazer uma função 50/50 pra nao ser muito OP
-                player.Vida += AtualItem[i].pontos_de_acao;
-                for (int i = 0; i < Inventario.size(); i++) {
-                    for (int j = i + 1; j < Inventario.size(); j++) {
-                        if (AtualItem[i].Nome == Inventario[j].Nome) {
-                            Inventario.erase(Inventario.begin() + i);
-                        }
-                    }
-                }  
-                AtualItem.erase(AtualItem.begin() + i); 
+                // AtualItem.erase(AtualItem.begin() + i); mesma coisa do escudo
                 break;
             }
             if (AtualItem[i].tipo == Pocao) { // Futuramente, fazer tipos diferentes de poção, aí vai ter que alterar kkkkkk
-                player.Vida += AtualItem[i].pontos_de_acao;
-                for (int i = 0; i < Inventario.size(); i++) {
-                    for (int j = i + 1; j < Inventario.size(); j++) {
-                        if (AtualItem[i].Nome == Inventario[j].Nome) {
-                            Inventario.erase(Inventario.begin() + i);
-                        }
-                    }
-                }  
+                player.Vida += AtualItem[i].pontos_de_acao;   
                 AtualItem.erase(AtualItem.begin() + i); 
                 break;
             }
