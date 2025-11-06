@@ -10,6 +10,8 @@
 #include "headers/itens.h"
 using namespace std;
 
+// Ao invés de usar print, cria um delay(ms)
+
 void cleanConsole() {
     system("clear");
 }

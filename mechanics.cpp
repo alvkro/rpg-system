@@ -8,7 +8,7 @@
 #include "headers/itens.h"
 using namespace std;
 
-// Colocar uma biblioteca para randomizar os ataques que nem no Dota (seria uma adição legal...)
+// Adicionar função que incrementa ataques. 
 
 int randomAttack_J(Jogador& player) {
     random_device rd;
@@ -43,6 +43,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
         MenuAcao(player, enemy);
         cin >> action;
         cleanConsole();
+        
         switch (action)
         {
         case 1:
@@ -52,12 +53,13 @@ bool Combate(Jogador& player, Inimigo& enemy) {
                 return true;
             }
             break;
-        //case 2:
-        //    player.SelectItem(); // ainda preciso trabalhar nos itens
-        //    break;
+        case 2:
+            player.SelectItem();
+            break;
         case 3:
             break;
         }
+
         enemy.GetInimigoAtaque(player, enemy);
         cin.get();
         cleanConsole();
@@ -65,6 +67,7 @@ bool Combate(Jogador& player, Inimigo& enemy) {
                 return false;
             }
         }
+
         if (player.Vida <= 0) {
             return false;
         }

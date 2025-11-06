@@ -12,11 +12,10 @@ using namespace std;
 class Inimigo {
     public:
     string Nome = "Goblin";
-    int Vida = 200;
+    int Vida = 100;
     int Ataque = 10;
 
     // Funções:
-
     void GetInimigoAtaque(Jogador& player, Inimigo& enemy);
     void GetInimigoInfo(const Inimigo& enemy);
 };

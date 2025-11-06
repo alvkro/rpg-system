@@ -38,31 +38,51 @@ using namespace std;
 
     char Jogador::SetItens() {
         int Escolha;
+        char confirma;
         print("Escolha seus Items: (MÁXIMO DE 2)\n");
         for (int i = 1; i <= 2; i++) {
             for (int i = 0; i < BancoDeItems.size(); i++) {
-                cout << i << ". " << BancoDeItems[i].Nome;
+                cout << i + 1 << ". " << BancoDeItems[i].Nome << endl;
             }
-            Inventario.push_back(BancoDeItems[Escolha]);
+            cin >> Escolha;
+            Inventario.push_back(BancoDeItems[Escolha - 1]);
         }
-        print("Este é o seu inventário: ");
-        for (int i = 0; i < Inventario.size(); i++) {
-            cout << Inventario[i].Nome << endl;
-        }
-        char confirma;
         print("Este é o seu inventário: ");
         for (int i = 0; i < Inventario.size(); i++) {
             cout << Inventario[i].Nome << ", ";
         }
-        
+        cout << "\n";
         print("Confirma? S/N: ");
         cin >> confirma;
-        toupper(confirma);
-
+        confirma = toupper(confirma);
         return confirma;
     }
 
     void Jogador::GetJogadorInfo(const Jogador& player) { 
         cout << "Nome: " << player.Nome << endl;
-        cout << "Vida: " << player.Vida << "hp\n"; 
+        cout << "Vida: " << player.Vida << "hp\n";
+    } 
+
+    void Jogador::SelectItem() { // Trabalhar nessa porra
+        int Escolha;
+        if (Inventario.empty()) {
+            cout << "Inventário vazio!\n";
+        }
+        else {
+            for (int i = 0; i < Inventario.size(); i++) {
+                cout << i + 1 << ". " << Inventario[i].Nome << " (Poder: " << Inventario[i].pontos_de_acao << ")\n";
+            }
+            while(true) {
+                cout << "Escolha um item:";
+                cin >> Escolha;
+                AtualItem.push_back(Inventario[Escolha - 1]);
+                if(Escolha >= 1 && Escolha <= Inventario.size()) {
+                    print("Item selecionado!");
+                    break;
+                }
+                else {
+                    cout << "Item Inválido! Tente novamente\n";
+                }
+            }
+        }
     }

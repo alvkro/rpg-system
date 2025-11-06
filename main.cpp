@@ -31,7 +31,7 @@ int main() {
 
     // PERSONALIZAÇÃO DO JOGADOR
 
-    while(true){
+    while(true) {
         if ((Player.GetNomeJogador(Player)) == 'S') {
             cleanConsole();
             break;
@@ -40,8 +40,11 @@ int main() {
             cleanConsole();
             Player.GetNomeJogador(Player);
         }
+        break;
+    }
 
-        if ((Player.SetItens()) == 'S') {
+    while (true) {
+        if (Player.SetItens() == 'S') {
             cleanConsole();
             break;
         }
@@ -49,12 +52,13 @@ int main() {
             cleanConsole();
             Player.SetItens();
         }
+        break;
     }
 
     // COMBATE
         
     Combate(Player, Enemy);
-    if(Combate(Player, Enemy) == true) {
+    if (Combate(Player, Enemy) == true) {
         cleanConsole();
         cout << Player.Nome << " GANHOU!\n";
     }
